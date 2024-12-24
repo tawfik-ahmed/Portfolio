@@ -17,14 +17,14 @@ const Tech = () => {
 
   return (
     <>
-      <div className="flex flex-wrap  justify-center gap-10">
+      <div className="flex flex-wrap justify-center gap-10">
         {technologies.map((tech, index) => (
           <div key={tech.name} className="w-28 h-28">
             <BallCanvas icon={tech.icon} />
           </div>
         ))}
       </div>
-      <Canvas
+      {/* <Canvas
         frameloop="demand"
         gl={{ preserveDrawingBuffer: false }}
         style={{
@@ -38,7 +38,7 @@ const Tech = () => {
         eventSource={eventSource}
       >
         <Preload all />
-      </Canvas>
+      </Canvas> */}
     </>
   );
 };

@@ -80,7 +80,7 @@ const GirlCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: isMobile ? [20, 3, 5] : [50, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: false, alpha: true }}
+      gl={{ preserveDrawingBuffer: true, alpha: true }}
     >
       <ambientLight intensity={0.5} />
       <Suspense fallback={<CanvasLoader />}>
