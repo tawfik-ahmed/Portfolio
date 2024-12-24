@@ -28,7 +28,7 @@ const TV = ({ isMobile }) => {
       <primitive
         object={tv.scene}
         scale={isMobile ? 0.0575 : 0.06875}
-        position={isMobile ? [0, -9.175, -0.055] : [0, -11.5, -0.1, -0.0375]}
+        position={isMobile ? [0, -9.175, -0.055] : [0, -11.5, -0.1]}
         rotation={[-0.01, -0.2, -0.1]}
         castShadow
         receiveShadow
@@ -68,7 +68,7 @@ const TvManCanvas = () => {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [50, 3, 5], fov: 25 }}
+      camera={{ position: isMobile ? [20, 3, 5] : [50, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <ambientLight intensity={0.5} />
