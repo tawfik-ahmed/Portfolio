@@ -45,7 +45,7 @@ const TV = ({ isMobile }) => {
 };
 
 const TvManCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
