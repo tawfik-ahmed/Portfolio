@@ -26,8 +26,8 @@ const Girl = ({ isMobile }) => {
       />
       <primitive
         object={girl.scene}
-        scale={isMobile ? 5 : 7}
-        position={isMobile ? [0, -9.175, -0.055] : [0, -10, -0.1]}
+        scale={isMobile ? 2.5 : 6.3}
+        position={isMobile ? [0, -4.2, -1.2] : [0, -10, -0.9]}
         rotation={[-0.01, -0.2, -0.1]}
         castShadow
         receiveShadow
