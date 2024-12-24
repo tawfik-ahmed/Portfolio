@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { useLoader, Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
 import CanvasLoader from "../Loader";
 
 const Girl = ({ isMobile }) => {
@@ -45,23 +44,35 @@ const Girl = ({ isMobile }) => {
 };
 
 const GirlCanvas = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
     setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = (e) => {
-      setIsMobile(e.matches);
+    const onMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
     };
 
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    mediaQuery.addEventListener("change", onMediaQueryChange);
 
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mediaQuery.removeEventListener("change", onMediaQueryChange);
     };
   }, []);
+
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!initialized) {
+      setInitialized(true);
+    }
+  }, [initialized]);
+
+  if (!initialized) {
+    return <div></div>;
+  }
 
   return (
     <Canvas
@@ -69,7 +80,7 @@ const GirlCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: isMobile ? [20, 3, 5] : [50, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, alpha: true }}
     >
       <ambientLight intensity={0.5} />
       <Suspense fallback={<CanvasLoader />}>
