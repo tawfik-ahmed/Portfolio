@@ -6,7 +6,7 @@ import {
   useTexture,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import Loader from "../Loader";
 
 const Ball = (props) => {
@@ -27,6 +27,7 @@ const Ball = (props) => {
         <Decal
           position={[0, 0, 1]}
           map={decal}
+          scale={[1, 1, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
         />
       </mesh>
@@ -35,11 +36,23 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!initialized) {
+      setInitialized(true);
+    }
+  }, [initialized]);
+
+  if (!initialized) {
+    return <div></div>;
+  }
+
   return (
     <Canvas
       className="top-20"
       frameloop="demand"
-      gl={{ preserveDrawingBuffer: false }}
+      gl={{ preserveDrawingBuffer: true, alpha: true }}
     >
       <Suspense fallback={<Loader />}>
         <OrbitControls enableZoom={false} />
