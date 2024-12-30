@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="flex flex-col gap-2 mt-5 z-1">
             <a
               href="https://drive.google.com/uc?export=download&id=1YIcUsK4J0xDd5krNmhGJMIs2ykDLRNq8"
-              className="w-40 h-10 bg-[#915EFF] text-white flex items-center justify-center rounded tracking-[1.4px] text-sm"
+              className="w-40 h-10 bg-[#915EFF] text-white flex items-center justify-center rounded tracking-wider text-[14px] font-semibold transition-all duration-300 hover:bg-[#7a4cd8]"
             >
               Download CV
             </a>
