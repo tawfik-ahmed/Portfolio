@@ -13,6 +13,13 @@ import {
   nodejs,
   mongodb,
   git,
+  docker,
+  express,
+  graphql,
+  jsonwebtoken,
+  postgresql,
+  restapi,
+  socketio,
 } from "../assets";
 
 export const navLinks = [
@@ -36,24 +43,16 @@ const services = [
     icon: web,
   },
   {
-    title: "ReactJS Developer",
+    title: "Frontend Services",
     icon: mobile,
   },
   {
-    title: "NextJs Developer",
+    title: "Backend Services",
     icon: backend,
   },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
   {
     name: "JavaScript",
     icon: javascript,
@@ -61,6 +60,50 @@ const technologies = [
   {
     name: "TypeScript",
     icon: typescript,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "Express JS",
+    icon: express,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+  },
+  {
+    name: "Rest API",
+    icon: restapi,
+  },
+  {
+    name: "GraphQL",
+    icon: graphql,
+  },
+  {
+    name: "JWT",
+    icon: jsonwebtoken,
+  },
+  {
+    name: "Socket.io",
+    icon: socketio,
+  },
+  {
+    name: "Docker",
+    icon: docker,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    icon: css,
   },
   {
     name: "React JS",
@@ -79,20 +122,34 @@ const technologies = [
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
     name: "git",
     icon: git,
   },
 ];
 
 const projects = [
+  {
+    name: "Nasa Mission Control",
+    description:
+      "NASA Mission Control is an interactive web app for exploring and managing NASA mission data, featuring real-time updates, smooth animations, and an immersive interface. ",
+    tags: [
+      {
+        name: "express.js",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "react.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+    ],
+    image: "/NasaApp.png",
+    live_link: "https://nasa-mission.up.railway.app",
+    source_code_link: "https://github.com/tawfik-ahmed/NASA_Mission_Control",
+  },
   {
     name: "Case Cobra",
     description:
@@ -170,7 +227,7 @@ const projects = [
   {
     name: "Threads Clone",
     description:
-      "This is a clone of the popular social media platform Threads, built with modern technologies. The web app provides a full set of features, including user authentication, thread creation, profile management, and community building, designed with an elegant and responsive user interface.",
+      "This is a clone of the popular social media platform Threads. the web app provides a full set of features, including user authentication, thread creation, profile management, and community building.",
     tags: [
       {
         name: "next.js",
