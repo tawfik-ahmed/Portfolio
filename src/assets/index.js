@@ -10,10 +10,8 @@ import close from "./close.svg";
 import docker from "./tech/docker.png";
 import express from "./tech/expressjs.png";
 import graphql from "./tech/graphql.png";
-import jsonwebtoken from "./tech/jsonwebtoken.png";
 import postgresql from "./tech/postgresql.png";
 import restapi from "./tech/restapi.png";
-import socketio from "./tech/socket.io.png";
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -31,10 +29,8 @@ export {
   docker,
   express,
   graphql,
-  jsonwebtoken,
   postgresql,
   restapi,
-  socketio,
   backend,
   creator,
   mobile,

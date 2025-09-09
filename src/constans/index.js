@@ -16,10 +16,8 @@ import {
   docker,
   express,
   graphql,
-  jsonwebtoken,
   postgresql,
   restapi,
-  socketio,
 } from "../assets";
 
 export const navLinks = [
@@ -80,14 +78,6 @@ const technologies = [
   {
     name: "GraphQL",
     icon: graphql,
-  },
-  {
-    name: "JWT",
-    icon: jsonwebtoken,
-  },
-  {
-    name: "Socket.io",
-    icon: socketio,
   },
   {
     name: "Docker",
